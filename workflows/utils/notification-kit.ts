@@ -26,7 +26,9 @@ export class NotificationKit {
       user: env.EMAIL_USER, // generated ethereal user
       pass: env.EMAIL_PASS // generated ethereal password
     };
-
+    console.log("邮箱账号:"+env.EMAIL_USER);
+    console.log("邮箱密码:"+env.EMAIL_PASS);
+    console.log("发送账号:"+env.EMAIL_TO);
     if (!auth.user || !auth.pass || auth.user === "" || auth.pass === "") {
       throw new Error("未配置邮箱。");
     }
