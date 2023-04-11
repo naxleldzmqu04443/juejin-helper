@@ -29,11 +29,10 @@ jobs:
           cd workflows
           yarn
           yarn checkin
-      - name: Print environment variable value
-        run: |
-          echo "::debug::邮箱账号:$EMAIL_USER"
-          echo "::debug::邮箱密码:${{EMAIL_PASS}}"
-          echo "::debug::发送到账号:$EMAIL_TO"
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
 #  SeaGold:
 #    needs: CheckIn
 #    runs-on: ubuntu-latest
