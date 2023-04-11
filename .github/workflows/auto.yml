@@ -29,10 +29,6 @@ jobs:
           cd workflows
           yarn
           yarn checkin
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
 #  SeaGold:
 #    needs: CheckIn
 #    runs-on: ubuntu-latest
